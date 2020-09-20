@@ -32,9 +32,18 @@ https://hub.docker.com/r/lambci/lambda/tags?page=1&name=ruby
 https://buildersbox.corp-sansan.com/entry/2019/04/17/110000  
 
 #### 2.  Lambda側の環境変数で GEM_PATH を指定する必要がある  
-これがわかりづらい...  
-```
-GEM_PATH /opt/ruby/2.7.0
-```
+これが地味にわかりづらい...  
+出るエラーはgemが読み込めないしか出ないので
+|キー|値|
+|-|-|
+|GEM_PATH|/opt/ruby/2.7.0|
 
-#### 3. Lambda実行サーバ
+
+参考: AWS Lambda layers - AWS Lambda  
+https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html#configuration-layers-path
+
+#### 3. Lambda実行サーバの時計がUTC
+Lambda側の環境変数でタイムゾーンを指定すればOK
+|キー|値|
+|-|-|
+|TZ|Asia/Tokyo|
