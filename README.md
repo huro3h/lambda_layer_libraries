@@ -12,8 +12,9 @@ FW使わずにやる場合どうするのか調べる
 - よく使うgemをLambda Layerで共通化
 
 
-#### [WIP] 覚書  
-- ネイティブライブラリのビルドはAWS側のLambda実行環境に合わせる必要がある  
+#### [WIP] ハマりポイント覚書  
+
+#### 1.  ネイティブライブラリのビルドはAWS側のLambda実行環境に合わせる必要がある
   - MacのHostで `bundle install` したNokogiriとかが関数実行時にコケるのはこのため
   - 専用のdockerイメージがあるので、Mac側のホストのディレクトリをマウントしつつ  
   docker内でビルドしたものを使う  
@@ -29,3 +30,9 @@ https://hub.docker.com/r/lambci/lambda/tags?page=1&name=ruby
 　　　　/native extensionsに依存する gem を使った Lambda 実装  
   
 https://buildersbox.corp-sansan.com/entry/2019/04/17/110000  
+
+#### 2.  Lambda側の環境変数で GEM_PATH を指定する必要がある  
+これがわかりづらい...  
+```
+GEM_PATH /opt/ruby/2.7.0
+```
