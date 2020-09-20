@@ -36,3 +36,5 @@ https://buildersbox.corp-sansan.com/entry/2019/04/17/110000
 ```
 GEM_PATH /opt/ruby/2.7.0
 ```
+
+#### 3. Lambda実行サーバ
