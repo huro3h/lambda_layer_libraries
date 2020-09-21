@@ -34,7 +34,10 @@ https://hub.docker.com/r/lambci/lambda/tags?page=1&name=ruby
 https://buildersbox.corp-sansan.com/entry/2019/04/17/110000  
 
 #### 2.  Lambda側の環境変数で GEM_PATH を指定する必要がある  
-これが地味にわかりづらい...  
+Lambda実行環境の標準パスは `/opt/ruby/gems/2.5.0` 等で  
+これを以下のパスに変更する必要がある  
+  
+**これが地味にわかりづらい...**  
 出るエラーはgemが読み込めないしか出ないので
 |キー|値|
 |-|-|
