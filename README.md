@@ -23,6 +23,8 @@ FW使わずにやる場合どうするのか調べる
   ```shell
   docker run -v `pwd`:/var/task -it lambci/lambda:build-ruby2.7 bundle install --path ./
   ```
+  - `ruby/` 以下のgem群をzipで固めて、直接またはS3にアップロード  
+  - アップロードしたファイルをLambda Layerに設定
   
 - Dockerイメージ  lambci/lambda  
 https://hub.docker.com/r/lambci/lambda/tags?page=1&name=ruby
